@@ -23,6 +23,7 @@ RUN mkdir -p /opt/l4d2/game/left4dead2/cfg/
 ADD src/l4d2/start-l4d2.sh /opt/l4d2/start-l4d2.sh
 ADD src/l4d2/l4d2-steamcmd-script /opt/l4d2/l4d2-steamcmd-script
 ADD src/l4d2/server.cfg /opt/l4d2/game/left4dead2/cfg/server.cfg
+ADD src/l4d2/addonconfig.cfg /opt/l4d2/game/left4dead2/cfg/addonconfig.cfg
 RUN chmod 0555 /opt/l4d2/start-l4d2.sh
 
 VOLUME ["/var/log/", "/opt/l4d2/"]
