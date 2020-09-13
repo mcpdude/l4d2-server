@@ -41,7 +41,7 @@ with your new bucket name
 - Update the following portion with whatever region you want to use for your server. Local is better.
 
 locals {
-  # The Google Cloud Project ID that will host and pay for your l4d2 server
+  \# The Google Cloud Project ID that will host and pay for your l4d2 server
   project = "###PROJECT ID HERE###"
   region  = "us-west2"
   zone    = "us-west2-a"
