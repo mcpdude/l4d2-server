@@ -6,20 +6,12 @@ Server is hosted on a permenant IP address. You need to start the VM each sessio
 will shutdown within 24 hours if you forget to turn it off.
 Process is run in a sandboxed VM, so any server exploits cannot do any serious damage.
 
-We are experimenting with providing support through a [google doc](https://docs.google.com/document/d/1TXyzHKqoKMS-jY9FSMrYNLEGathqSG8YuHdj0Z9GP34).
-Help us make this simple for others to use by asking for help.
-
 
 Features
-- Runs [itzg/l4d2-server](https://hub.docker.com/r/itzg/l4d2-server/) Docker image
+- Runs mcpdude/l4d2-server Docker image
 - Preemtible VM (cheapest), shuts down automatically within 24h if you forget to stop the VM
-- Reserves a stable public IP, so the l4d2 clients do not need to be reconfigured
-- Reserves the disk, so game data is remembered across sessions
 - Restricted service account, VM has no ability to consume GCP resources beyond its instance and disk
-- 2$ per month
-  - Reserved IP address costs: $1.46 per month
-  - Reserved 10Gb disk costs: $0.40
-  - VM cost: $0.01 per hour, max session cost $0.24
+
 */
 
 # We require a project to be provided upfront
@@ -88,8 +80,8 @@ resource "google_compute_instance" "l4d2" {
   # Run itzg/l4d2-server docker image on startup
   # The instructions of https://hub.docker.com/r/itzg/l4d2-server/ are applicable
   # For instance, Ssh into the instance and you can run
-  #  docker logs mc
-  #  docker exec -i mc rcon-cli
+  #  docker logs l4d2-server
+  #  docker exec -i l4d2-server bash
   # Once in rcon-cli you can "op <player_id>" to make someone an operator (admin)
   # Use 'sudo journalctl -u google-startup-scripts.service' to retrieve the startup script output
   metadata_startup_script = "docker run -p 27015:27015 -p 27015:27015/udp -p 27020:27020/udp -m 14G --name l4d2-server mcpdude/l4d2server"
