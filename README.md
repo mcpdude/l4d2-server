@@ -19,5 +19,7 @@ The project leverages Terraform and Docker to spin up a server in less than five
 
 # Make it so
 
+Clone this respository. `cd` into the repository directory, then run `terraform init`
 
+You'll need to update the following parts of the "main.tf" file.
 
