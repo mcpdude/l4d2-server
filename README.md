@@ -5,7 +5,7 @@ It's a project to deploy a server for playing L4D2 with your friends. It is stre
 
 # Why is this?
 
-Because I saw that seen in World War Z with the hordes of zombies and wanted to play a game around it.
+Because I saw that scene in World War Z with the hordes of zombies and wanted to play a game around it.
 
 # How is this?
 
